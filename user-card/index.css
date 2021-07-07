@@ -1,0 +1,6 @@
+.p-main__container {
+  min-height: 100vh;
+}
+.p-main__container .user-card__container{ 
+  margin: 20px;
+}

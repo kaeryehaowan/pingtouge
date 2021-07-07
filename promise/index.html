@@ -1,0 +1,23 @@
+<script>
+    window.addEventListener('load', () => {
+        // 用标记是否需要中断
+        let c = false
+        let pA = (function(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    if(c){
+                        reject()
+                    }else{
+                        resolve()
+                    }
+                }, 1000)
+            })
+        })()
+        c = Date.now()%2
+        pA.then(()=>{
+            console.log('请求成功：', c)
+        }).catch(()=>{
+            console.log('请求失败：', c)
+        })
+    })
+</script>
